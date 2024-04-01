@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+from sys import argv
+if len(argv) != 2:
+    print("error: Usage factors file_name")
+    exit()
+try:
+    file = open(argv[1], "r")
+    lines = file.readlines()
+    for num in lines:
+        n = int(num)
+        for q in range(2, n):
+            if n % q == 0:
+                break;
+        p = n // q
+        print("{:d}={:d}*{:d}".format(n, p, q))
+except FileNotFoundError:
+    print("file {:s} not found".format(argv[1]))
