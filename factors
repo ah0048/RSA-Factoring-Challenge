@@ -16,7 +16,9 @@ try:
             continue
         for q in range(3, isqrt(n) + 1, 2):
             if n % q == 0:
-                break;
+                break
+        else:
+            q = 1
         p = n // q
         print("{:d}={:d}*{:d}".format(n, p, q))
 except FileNotFoundError:
